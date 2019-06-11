@@ -2,8 +2,8 @@ import urllib.request
 import json
 import csv
 
-# Every API request requires IP authorization
-# clan tag must not contain a hashtag
+# Creates a list containing the clan tag of each member of a given clan, then writes each members profile information to a CSV file.
+# inputted clan tag must not contain a hashtag
 def clan_member_list_generator(clanTag):
     with open("clashkey.txt") as f:
         my_key = f.read().rstrip("\n")
@@ -59,6 +59,7 @@ def clan_member_list_generator(clanTag):
             except:
                 pass
 
+#When given a member's tag, will return all information about that player.
 def individual_member_info_generator(memberTag):
     with open("clashkey.txt") as f:
         with open('member.csv', 'w', newline='') as i:
