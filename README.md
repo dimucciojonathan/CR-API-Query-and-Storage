@@ -1,6 +1,6 @@
 # CR-API-Query-and-Storage
 
-Before running any analytics, it's important to get the data from somewhere. Many platforms such as video game publishers have extensive API's from which anyone can access their data. One limitation to an API is that there is usually not always a long history of data stored in the API.
+Before running any analytics, it's important to get the data from somewhere. Many platforms such as video game publishers have extensive API's from which anyone can access their data. One limitation to an API is that there is not always a long history of data stored in the API.
 
 Clash Royale is a competitve mobile game that combines aspects from genres such as tower defense and collectible card games. The API hold an extensive range of data from game logs to profile information. The issue is that a players info can only be retrieved at real time, and game logs only hold up to 14 previous matches.
 
