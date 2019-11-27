@@ -4,7 +4,7 @@ Before running any analytics, it's important to get the data from somewhere. Man
 
 Clash Royale is a competitve mobile game that combines aspects from genres such as tower defense and collectible card games. The API hold an extensive range of data from game logs to profile information. The issue is that a players info can only be retrieved at real time, and game logs only hold up to 14 previous matches.
 
-To solve this problem, I set out to automate the process of gathering and storing data from the API. My program is currently running on Amazon Web Services through a Lambda function. It automatically takes data from the API and stores it to a database that is hosted through AWS on a Relational Database Service.
+To solve this problem, I set out to automate the process of gathering and storing data from the API. My program is currently running on Amazon Web Services through a Lambda function. It automatically takes data from the API and stores it to a database that is hosted through Amazon's RDS.
 
 My goal for this writeup is to document my process of start to finish. Before this, I have never queried an API or set up a database, but I have spent time learning the SQL language. I'll give a walkthrough of: the steps I took, roadblocks I faced, and resources that helped me overcome them.
 
