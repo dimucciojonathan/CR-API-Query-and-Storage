@@ -12,14 +12,14 @@ My goal for this writeup is to document my process of start to finish. Before th
 
 The first thing I wanted to do is simply query the API and print out the data I want in string format. This API requires a authentication key that has a whitelisted IP connected to it. This doesn’t present any problems now, but AWS Lambda functions have a different IP for each instance by default. Later on I will explain how I got my lambda function to have a single, static IP address.
 
-    https://www.youtube.com/watch?v=pxofwuWTs7c&t=185s
-    https://www.youtube.com/watch?v=3RAtqgVQ1rU&t=324s
+    https://www.youtube.com/watch?v=pxofwuWTs7c&t
+    https://www.youtube.com/watch?v=3RAtqgVQ1rU&t
 
 2.  Insert the data into a local database
 
 Still on my local machine, I figured the next logical step was to learn a bit about databases. SQLite was very easy to install since it’s just an import, and I went with that. Here I got down the basics of connections, tables, and executing statements.
 
-https://www.youtube.com/watch?v=pd-0G0MigUA&t=1110s
+https://www.youtube.com/watch?v=pd-0G0MigUA&t
 
 3. Figure out how to automate this process
 
@@ -29,7 +29,7 @@ Now that I can query the API and store it in the most simple way possible, I dec
 
 For some uses, porting your code to AWS is as simple as a copy and paste. But here, I spent a decent amount of time getting my function’s IP address to stay the same. Turns out I had to learn a bit about how networks interact with each other to complete this task.
 
-https://www.youtube.com/watch?v=-8L4OxotXlE&t=1227s
+https://www.youtube.com/watch?v=-8L4OxotXlE&t
 
 5. Connect an elastic IP to my AWS Lambda function
 
@@ -50,7 +50,7 @@ https://aws.amazon.com/premiumsupport/knowledge-center/internet-access-lambda-fu
 This part took me longer than it should have. There was an issue where I had uninstalled and reinstalled MYSQL, and the installer no longer gave me the master password. The solution was to fully delete MYSQL through the terminal then reinstall.
 
 https://gist.github.com/vitorbritto/0555879fe4414d18569d
-https://www.youtube.com/watch?v=UcpHkYfWarM&list=LLoNcHvIIiw-5gCSrQpDAmKg&index=5&t=774s
+https://www.youtube.com/watch?v=UcpHkYfWarM&list=LLoNcHvIIiw-5gCSrQpDAmKg&index=5&t
 
 6. Set up a MYSQL database using the RDS feature of AWS
 
@@ -60,7 +60,7 @@ This step is straightforward thanks to Amazon’s interface. I made sure to set 
 
 This was my first time setting up a database, so I went with MYSQL Workbench for simplicity. After each call, I looked over the SQL code to make sure I would be able to do this step from the terminal if needed. MYSQL Workbench is also using for getting a UI on a database where I can view tables and such from a high level.
 
-https://www.youtube.com/watch?v=HoZL7oyR-wo&t=2s
+https://www.youtube.com/watch?v=HoZL7oyR-wo&t
 
 Up to this point, I can query the clash royale API through my lambda function, and I have access to my database from my local machine. The last step is to just create some insert statements within my lambda function and run the function on an automatic schedule.
 
@@ -68,13 +68,13 @@ Up to this point, I can query the clash royale API through my lambda function, a
 
 AWS Lambda does not automatically come with every import. For example, lambda does not have requests or pymysql, and I needed both. The workaround here is to first install the packages into the application folder. Next, I zipped up the .py file with the packages I needed and uploaded to my lambda function. Zipping up all the files that are necessary and uploading is known as a deployment package.
 
-https://www.youtube.com/watch?v=rDbxCeTzw_k&t=594s
+https://www.youtube.com/watch?v=rDbxCeTzw_k&t
 
 9. Insert to database from Lambda
 
 Finally, we can put the pieces together. Every lambda function has to be pointed to a specific python file and function with parameters (event, context). My program has the same inputs every time, so I have my (event,context) set to None. After lambda enters this first function, I point it to my ‘save_events’ function which gathers the data and inserts it into the database.
 
-https://www.youtube.com/watch?v=-CoL5oN1RzQ&t=268s
+https://www.youtube.com/watch?v=-CoL5oN1RzQ&t
 
 10. Run the Lambda function on automatic intervals
 
